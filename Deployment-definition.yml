@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pig_game_d
+  labels:
+    tier: frontend
+    app: pig_game
+spec:
+  replicas: 3
+  selector: 
+    matchlabel:
+      app: pig_game 
+  template:
+    metadata:
+      name: pig_game
+    spec:
+      containers:
+        - name: pig_game
+          image: shantanudock/pig_game:first
+      ports:
+        - containerport: 80
