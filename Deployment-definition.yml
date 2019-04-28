@@ -8,7 +8,7 @@ metadata:
 spec:
   replicas: 3
   selector: 
-    matchlabel:
+    matchlabels:
       app: pig_game 
   template:
     metadata:
@@ -17,5 +17,5 @@ spec:
       containers:
         - name: pig_game
           image: shantanudock/pig_game:first
-      ports:
-        - containerport: 80
+          ports:
+          - containerport: 80
